@@ -1,13 +1,26 @@
 module.exports = {
-    "env": {
-        "commonjs": true,
-        "es2021": true,
-        "node": true
+    env: {
+      commonjs: true,
+      es2021: true,
+      node: true,
+      'jest/globals': true
     },
-    "extends": "eslint:recommended",
-    "parserOptions": {
-        "ecmaVersion": "latest"
+    extends: [
+      'standard',
+      'plugin:jest/recommended'
+    ],
+    parserOptions: {
+      ecmaVersion: 'latest'
     },
-    "rules": {
+    plugins: ['jest'],
+    rules: {
+      semi: [2, 'always'],
+      'jest/no-disabled-tests': 'warn',
+      'jest/no-focused-tests': 'error',
+      'jest/no-identical-title': 'error',
+      'jest/prefer-to-have-length': 'warn',
+      'jest/valid-expect': 'error'
     }
-}
+  
+  };
+  
